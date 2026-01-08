@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-const API_URL = "http://localhost:5000/api/contacts";
+const API_URL = "https://contact-management-k18x.onrender.com";
 
 function App() {
   const [contacts, setContacts] = useState([]);

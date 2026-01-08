@@ -58,7 +58,7 @@ app.put('/api/contacts/:id', async (req, res) => {
 
 //  Connect & Start
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/contact_db";
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://db_user_swastika:HOM3XNeBlYiHvokq@cluster0.hl4jflz.mongodb.net/?appName=Cluster0";
 
 mongoose.connect(MONGO_URI)
     .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
