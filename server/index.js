@@ -41,6 +41,21 @@ app.delete('/api/contacts/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// Update route
+app.put('/api/contacts/:id', async (req, res) => {
+  try {
+    const updatedContact = await Contact.findByIdAndUpdate(
+      req.params.id, 
+      req.body, 
+      { new: true } 
+    );
+    res.json(updatedContact);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //  Connect & Start
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/contact_db";
